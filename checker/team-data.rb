@@ -1,27 +1,14 @@
-team_member 'Nick' do
+team_member 'Arthur' do
   extension BasicSample
   extension BasicScripting
-  
-  extension RayTracerV1
-  extension RayTracerV2
-  extension RayTracerV3
-
-  extension PrimitiveRotationX
 end
 
-team_member 'Kurt' do
-  extension BasicSample
-  extension BasicScripting
+team_member 'Arne' do
   
-  extension RayTracerV4
-  extension RayTracerV5
 end
 
-team_member 'Dale' do
-  extension BasicSample
-  extension BasicScripting
-
-  extension RayTracerV6
+team_member 'Stijn' do
+  
 end
 
 
