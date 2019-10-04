@@ -98,7 +98,8 @@ namespace imaging
         constexpr Color blue()    { return Color{ 0, 0, 1 }; }
         constexpr Color yellow()  { return Color{ 1, 1, 0 }; }
         constexpr Color magenta() { return Color{ 1, 0, 1 }; }
-        constexpr Color cyan()    { return Color{ 0, 1, 1 }; }
+		constexpr Color cyan() { return Color{ 0, 1, 1 }; }
+		constexpr Color rebecca()    { return Color{ 0.4, 0.2, 0.7 }; }
     }
 }
 
