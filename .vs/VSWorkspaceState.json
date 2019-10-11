@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\raytracer",
+    "\\raytracer\\raytracer",
+    "\\raytracer\\raytracer\\primitives",
+    "\\raytracer\\raytracer\\tests",
+    "\\raytracer\\raytracer\\tests\\primitives",
+    "\\raytracer\\raytracer\\tests\\primitives\\plane"
+  ],
+  "SelectedNode": "\\raytracer\\raytracer\\primitives\\primitive.cpp",
+  "PreviewInSolutionExplorer": false
+}

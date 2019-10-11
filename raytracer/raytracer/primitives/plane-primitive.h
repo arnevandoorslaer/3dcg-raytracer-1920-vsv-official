@@ -6,6 +6,7 @@ namespace raytracer
 {
     namespace primitives
     {
-        Primitive xy_plane();
+		Primitive xz_plane();
+		Primitive xy_plane();
     }
 }

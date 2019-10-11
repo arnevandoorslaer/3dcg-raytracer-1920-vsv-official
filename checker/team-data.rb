@@ -8,7 +8,10 @@ team_member 'Arne' do
 end
 
 team_member 'Stijn' do
-  
+  extension BasicSample
+  extension BasicScripting
+
+  extension PlaneXZ
 end
 
 
