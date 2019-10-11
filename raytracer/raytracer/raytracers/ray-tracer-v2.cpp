@@ -37,7 +37,39 @@ TraceResult raytracer::raytracers::_private_::RayTracerV2::trace(const Scene& sc
 		return TraceResult::no_hit(ray);
 	}
 }
+Color process_lights(const Scene& scene, const MaterialProperties& props,
+	const Hit& hit, const Ray& ray)
+{
+	Color result = colors::black();
+	for each (LightSource source in scene.light_sources)
+	{
+		result += process_light_source(scene, props, 
+			hit, ray, source);
+	}
+	return result;
+}
+Color process_light_source(const Scene& scene, const MaterialProperties& props,
+	const Hit& hit, const Ray& ray, LightSource source)
+{
+	Color result = colors::black();
+	for each (LightRay light in source->lightrays_to(hit))
+	{
+		result += process_light_ray(scene, props, hit, ray, light);
+	}
+	return result;
+}
+Color process_light_ray(const Scene& scene, const MaterialProperties& props,
+	const Hit& hit, const Ray& ray, LightRay& lightray)
+{
+	Color result = colors::black();
+	result += compute_diffuse();
+	return result;
+}
+Color compute_diffuse(const MaterialProperties& props,
+	const Hit& hit, const Ray& ray, LightRay& lightray)
+{
 
+}
 raytracer::RayTracer raytracer::raytracers::v2()
 {
 	return raytracer::RayTracer(std::make_shared<raytracer::raytracers::_private_::RayTracerV2>());
