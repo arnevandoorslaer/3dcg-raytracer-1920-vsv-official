@@ -2,6 +2,11 @@
 team_member 'Arthur' do
   extension BasicSample
   extension BasicScripting
+
+  extension RayTracerV1
+  extension RayTracerV2
+  extension RayTracerV3
+  extension RayTracerV4
 end
 
 team_member 'Arne' do
@@ -19,14 +24,7 @@ end
 
 
 # Possible extensions
-# You can copy paste lines below
 
-# extension BasicSample
-# extension BasicScripting
-# extension RayTracerV1
-# extension RayTracerV2
-# extension RayTracerV3
-# extension RayTracerV4
 # extension RayTracerV5
 # extension RayTracerV6
 # extension RandomSampler
