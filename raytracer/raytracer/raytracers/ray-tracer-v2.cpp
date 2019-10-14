@@ -4,41 +4,31 @@ using namespace imaging;
 using namespace math;
 using namespace raytracer;
 
-
 TraceResult raytracer::raytracers::_private_::RayTracerV2::trace(const Scene& scene, const Ray& ray) const
 {
 	Hit hit;
 
-	// Ask the scene for the first positive hit, i.e. the closest hit in front of the eye
-	// If there's a hit, find_first_positive_hit returns true and updates the hit object with information about the hit
 	if (scene.root->find_first_positive_hit(ray, &hit))
 	{
-		// There's been a hit
-		// Fill in TraceResult object with information about the trace
-
-		// This ray tracer always returns white in case of a hit
+		Color color = colors::black();
 		Color hit_color = hit.material->at(hit.local_position).ambient;
-
-		// The hit object contains the group id, just copy it (group ids are important for edge detection)
+		color += hit_color;
+		color += process_lights(scene, hit.material->at(hit.local_position), hit, ray);
+		
 		unsigned group_id = hit.group_id;
 
-		// The t-value indicates where the ray/scene intersection took place.
-		// You can use ray.at(t) to find the xyz-coordinates in space.
 		double t = hit.t;
 
-		// Group all this data into a TraceResult object.
-		return TraceResult(hit_color, group_id, ray, t);
+		return TraceResult(color, group_id, ray, t);
 	}
 	else
 	{
-		// The ray missed all objects in the scene
-		// Return a TraceResult object representing "no hit found"
-		// which is basically the same as returning black
 		return TraceResult::no_hit(ray);
 	}
 }
-Color process_lights(const Scene& scene, const MaterialProperties& props,
-	const Hit& hit, const Ray& ray)
+imaging::Color raytracer::raytracers::_private_::RayTracerV2::process_lights(
+	const Scene& scene, const MaterialProperties& props,
+	const Hit& hit, const math::Ray& ray) const
 {
 	Color result = colors::black();
 	for each (LightSource source in scene.light_sources)
@@ -48,27 +38,42 @@ Color process_lights(const Scene& scene, const MaterialProperties& props,
 	}
 	return result;
 }
-Color process_light_source(const Scene& scene, const MaterialProperties& props,
-	const Hit& hit, const Ray& ray, LightSource source)
+imaging::Color raytracer::raytracers::_private_::RayTracerV2::process_light_source(const Scene& scene, const MaterialProperties& props,
+	const Hit& hit, const math::Ray& ray, LightSource source) const
 {
 	Color result = colors::black();
-	for each (LightRay light in source->lightrays_to(hit))
+	for each (LightRay light in source->lightrays_to(hit.position))
 	{
 		result += process_light_ray(scene, props, hit, ray, light);
 	}
 	return result;
 }
-Color process_light_ray(const Scene& scene, const MaterialProperties& props,
-	const Hit& hit, const Ray& ray, LightRay& lightray)
+imaging::Color raytracer::raytracers::_private_::RayTracerV2::process_light_ray(const Scene& scene, const MaterialProperties& props,
+	const Hit& hit, const math::Ray& ray, LightRay& lightray) const
 {
 	Color result = colors::black();
-	result += compute_diffuse();
+	result += compute_diffuse(props, hit, ray, lightray);
 	return result;
 }
-Color compute_diffuse(const MaterialProperties& props,
-	const Hit& hit, const Ray& ray, LightRay& lightray)
+imaging::Color raytracer::raytracers::_private_::RayTracerV2::compute_diffuse(const MaterialProperties& props,
+	const Hit& hit, const math::Ray& ray, LightRay& lightray) const
 {
+	Color Cl = lightray.color;
+	math::Point3D L = lightray.ray.origin;
+	math::Point3D P = hit.position;
+	Color Cs = hit.material->at(hit.local_position).diffuse;
+	math::Vector3D vectorN = hit.normal;
 
+	auto cos = (L - P).normalized().dot(vectorN);
+
+	if (cos > 0)
+	{
+		return Cl * Cs * cos;
+	}
+	else
+	{
+		return colors::black();
+	}
 }
 raytracer::RayTracer raytracer::raytracers::v2()
 {
