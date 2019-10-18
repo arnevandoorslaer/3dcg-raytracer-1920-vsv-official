@@ -9,7 +9,8 @@ team_member 'Arne' do
 end
 
 team_member 'Stijn' do
-
+  extension MaterialVerticalLines
+  extension PlaneXZ
 end
 
 
