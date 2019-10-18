@@ -252,9 +252,6 @@
     <ClCompile Include="tests\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="samplers\random-sampler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imaging\bitmap.h">
@@ -753,9 +750,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="command-line-parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="samplers\random-sampler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

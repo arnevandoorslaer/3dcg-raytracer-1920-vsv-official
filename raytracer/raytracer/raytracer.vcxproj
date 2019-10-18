@@ -403,7 +403,6 @@
     <ClCompile Include="renderers\renderer.cpp" />
     <ClCompile Include="renderers\standard-renderer.cpp" />
     <ClCompile Include="lights\light-ray.cpp" />
-    <ClCompile Include="samplers\random-sampler.cpp" />
     <ClCompile Include="samplers\sampler.cpp" />
     <ClCompile Include="samplers\single-sampler.cpp" />
     <ClCompile Include="scripting\animation-module.cpp" />
@@ -561,7 +560,6 @@
     <ClInclude Include="renderers\renderers.h" />
     <ClInclude Include="renderers\standard-renderer.h" />
     <ClInclude Include="lights\light-ray.h" />
-    <ClInclude Include="samplers\random-sampler.h" />
     <ClInclude Include="samplers\sampler.h" />
     <ClInclude Include="samplers\samplers.h" />
     <ClInclude Include="samplers\single-sampler.h" />
