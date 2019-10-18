@@ -1,3 +1,5 @@
 .vs/*
 *.vcxproj.*
 *.vcxproj
+.vs/ProjectSettings.json
+raytracer/raytracer/raytracer.vcxproj

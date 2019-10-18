@@ -252,6 +252,9 @@
     <ClCompile Include="tests\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="samplers\random-sampler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="raytracers\ray-tracer-v1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -262,9 +265,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="raytracers\ray-tracer-v4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tasks\parallel-task-schedular.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -767,6 +767,12 @@
     <ClInclude Include="command-line-parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="samplers\random-sampler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracers\ray-tracer-v4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="raytracers\ray-tracer-v1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -774,12 +780,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="raytracers\ray-tracer-v3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="raytracers\ray-tracer-v4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tasks\parallel-task-schedular.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

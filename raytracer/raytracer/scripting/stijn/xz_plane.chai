@@ -9,7 +9,8 @@ def scene_at(now)
   var black = Materials.uniform( [ "ambient": Colors.white() * 0.1,
                                    "diffuse": Colors.black() * 0.8 ] )
 
-  var root = decorate(white, xy_plane())
+  var root = union( [ decorate( Materials.scale(0.1, 0.1, material), sphere() ),
+                    decorate( material, translate( vec(0, -1, 0), xz_plane() ) ) ] )
 
   var lights = [ Lights.omnidirectional( pos(0,1,0), Colors.white() ) ]
 
