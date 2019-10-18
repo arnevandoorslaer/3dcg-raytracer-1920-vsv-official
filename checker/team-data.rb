@@ -4,11 +4,11 @@ team_member 'Arthur' do
 end
 
 team_member 'Arne' do
-  
+  extension RandomSampler
 end
 
 team_member 'Stijn' do
-  
+
 end
 
 
