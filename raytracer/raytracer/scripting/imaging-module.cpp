@@ -19,7 +19,7 @@ namespace
         COLOR(blue)
         COLOR(yellow)
         COLOR(magenta)
-        COLOR(cyan)
+		COLOR(cyan)
 #       undef COLOR
     };
 
@@ -44,7 +44,7 @@ ModulePtr raytracer::scripting::_private_::create_imaging_module()
     BIND(blue);
     BIND(yellow);
     BIND(magenta);
-    BIND(cyan);
+	BIND(cyan);
 #   undef BIND
 
     module->add(fun([](const Color& c1, const Color& c2) {

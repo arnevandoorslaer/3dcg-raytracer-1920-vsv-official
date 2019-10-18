@@ -7,7 +7,18 @@ using namespace math;
 
 
 namespace
-{
+{	
+
+	/// There are two classes involved in the implementation of XY-Planes. Which are they and how is the functionality divided amongst them? 
+	/// answer: 
+	/// CoordinatePlaneImplementation -> doet het werk voor alle mogelijke hits te zoeken
+
+
+	/// PlaneXYImplementation -> elke hits worden hierin "geinitialiseerd"
+
+
+	/// What are the values for P and (vector)n? 
+
     /// <summary>
     /// Superclass for planes. Contains common logic.
     /// </summary>
@@ -75,6 +86,8 @@ namespace
             return Box(Interval<double>::infinite(), Interval<double>::infinite(), interval(-0.01, 0.01));
         }
 
+
+
     protected:
         void initialize_hit(Hit* hit, const Ray& ray, double t) const override
         {
@@ -85,6 +98,39 @@ namespace
             hit->normal = ray.origin.z() > 0 ? m_normal : -m_normal;
         }
     };
+
+	class PlaneXZImplementation : public CoordinatePlaneImplementation
+	{
+	public:
+		PlaneXZImplementation()
+			: CoordinatePlaneImplementation(Vector3D(0, 1, 0))
+		{
+			// NOP	
+		}
+
+		math::Box bounding_box() const override
+		{
+			return Box(Interval<double>::infinite(), interval(-0.01, 0.01), Interval<double>::infinite());
+		}
+
+
+	protected:
+		void initialize_hit(Hit* hit, const Ray& ray, double t) const override
+		{
+			hit->t = t;
+			hit->position = ray.at(hit->t);
+			hit->local_position.xyz = hit->position;
+			hit->local_position.uv = Point2D(hit->position.x(), hit->position.z());
+			hit->normal = ray.origin.y() > 0 ? m_normal : -m_normal;
+		}
+	};
+
+
+}
+
+Primitive raytracer::primitives::xz_plane()
+{
+	return Primitive(std::make_shared<PlaneXZImplementation>());
 }
 
 Primitive raytracer::primitives::xy_plane()
