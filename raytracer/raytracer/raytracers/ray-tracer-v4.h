@@ -13,7 +13,7 @@ namespace raytracer
 			public:
 				imaging::Color process_light_ray(const Scene&,
 					const MaterialProperties&, const Hit&,
-					const math::Ray&, LightRay&) const;
+					const math::Ray&, LightRay&) const override;
 			};
 		}
 		RayTracer v4();

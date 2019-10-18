@@ -108,7 +108,11 @@ int main(int argc, char** argv)
     process_command_line_arguments(argc, argv);
 
     // Renders a basic sample and writes it to a file named "test.wif". You may have to look around a bit to find it, but it will definitely be somewhere in the project's directory structure. You can use an absolute path to avoid having to look for it.
-    demos::basic_sample(pipeline::wif("test.wif"));
+    // demos::basic_sample(pipeline::wif("test.wif"));
+
+#ifdef _DEBUG
+	render_script(R"(D:\Documenten\Workspace3D\3d-studio\wpf\3d-studio\3d-studio\bin\Release\testt.chai)");
+#endif
 }
 
 #endif
