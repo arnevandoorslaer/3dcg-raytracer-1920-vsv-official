@@ -125,7 +125,32 @@ namespace
 		}
 	};
 
+	class PlaneYZImplementation : public CoordinatePlaneImplementation
+	{
+	public:
+		PlaneYZImplementation()
+			: CoordinatePlaneImplementation(Vector3D(1, 0, 0))
+		{
+			// NOP
+		}
 
+		math::Box bounding_box() const override
+		{
+			return Box(interval(-0.01, 0.01), Interval<double>::infinite(), Interval<double>::infinite());
+		}
+
+
+
+	protected:
+		void initialize_hit(Hit* hit, const Ray& ray, double t) const override
+		{
+			hit->t = t;
+			hit->position = ray.at(hit->t);
+			hit->local_position.xyz = hit->position;
+			hit->local_position.uv = Point2D(hit->position.y(), hit->position.z());
+			hit->normal = ray.origin.x() > 0 ? m_normal : -m_normal;
+		}
+	};
 }
 
 Primitive raytracer::primitives::xz_plane()
@@ -136,4 +161,8 @@ Primitive raytracer::primitives::xz_plane()
 Primitive raytracer::primitives::xy_plane()
 {
     return Primitive(std::make_shared<PlaneXYImplementation>());
+}
+Primitive raytracer::primitives::yz_plane()
+{
+	return Primitive(std::make_shared<PlaneYZImplementation>());
 }

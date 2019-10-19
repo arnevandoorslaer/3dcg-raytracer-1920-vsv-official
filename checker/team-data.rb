@@ -1,4 +1,3 @@
-
 team_member 'Arthur' do
   extension BasicSample
   extension BasicScripting
@@ -9,6 +8,8 @@ team_member 'Arthur' do
   extension RayTracerV4
 
   extension ParallelScheduler
+
+  extension PlaneYZ
 end
 
 team_member 'Arne' do
@@ -64,8 +65,6 @@ end
 # extension MaterialTranslate3D
 # extension MaterialRotate2D
 # extension MaterialRotate3D
-# extension PlaneXZ
-# extension PlaneYZ
 # extension PlaneXZOptimized
 # extension PlaneYZOptimized
 # extension ConeAlongX
