@@ -6,7 +6,8 @@ team_member 'Arthur' do
   extension RayTracerV2
   extension RayTracerV3
   extension RayTracerV4
-
+  extension RayTracerV5
+  
   extension ParallelScheduler
 
   extension PlaneYZ
@@ -29,7 +30,6 @@ end
 
 # Possible extensions
 
-# extension RayTracerV5
 # extension RayTracerV6
 # extension StratifiedSampler
 # extension JitteredSampler
