@@ -3,3 +3,4 @@
 *.vcxproj
 .vs/ProjectSettings.json
 raytracer/raytracer/raytracer.vcxproj
+raytracer/raytracer/raytracer.vcxproj.filters
