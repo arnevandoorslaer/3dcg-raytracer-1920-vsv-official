@@ -9,6 +9,7 @@ team_member 'Arne' do
 end
 
 team_member 'Stijn' do
+  extension MaterialGrid2d
   extension MaterialVerticalLines
   extension PlaneXZ
 end
