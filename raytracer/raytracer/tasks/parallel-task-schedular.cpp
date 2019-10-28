@@ -15,7 +15,7 @@ namespace
 		void perform(std::vector<std::shared_ptr<Task>> tasks) const
 		{	
 			std::atomic<int> i(0);
-			int aantalThreads = 8;
+			int aantalThreads = 20;
 			std::vector<std::thread> threads;
 			
 			for (int a = 0; a < aantalThreads; a++) {
