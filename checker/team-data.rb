@@ -7,9 +7,10 @@ team_member 'Arthur' do
   extension RayTracerV3
   extension RayTracerV4
   extension RayTracerV5
-  
-  extension ParallelScheduler
+  extension RayTracerV6
 
+  extension ParallelScheduler
+  extension DirectionalLight
   extension PlaneYZ
 end
 
@@ -30,7 +31,6 @@ end
 
 # Possible extensions
 
-# extension RayTracerV6
 # extension StratifiedSampler
 # extension JitteredSampler
 # extension HalfJitteredSampler
@@ -39,7 +39,6 @@ end
 # extension DepthOfFieldCamera
 # extension FisheyeCamera
 # extension OrthographicCamera
-# extension DirectionalLight
 # extension SpotLight
 # extension AreaLight
 # extension Voronoi2D

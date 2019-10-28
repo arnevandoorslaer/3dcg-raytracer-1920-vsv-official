@@ -1,4 +1,3 @@
-
 #ifndef EXCLUDE_SCRIPTING
 
 #include "scripting/raytracing-module.h"
@@ -21,6 +20,7 @@ namespace
 		RayTracer v3() const { return raytracer::raytracers::v3(); }
 		RayTracer v4() const { return raytracer::raytracers::v4(); }
 		RayTracer v5() const { return raytracer::raytracers::v5(); }
+		RayTracer v6() const { return raytracer::raytracers::v6(); }
 
 
         RayTracer v(int version) const
@@ -67,6 +67,7 @@ ModulePtr raytracer::scripting::_private_::create_raytracing_module()
 	BIND(v3);
 	BIND(v4);
 	BIND(v5);
+	BIND(v6);
     BIND(v);
 #   undef BIND
 

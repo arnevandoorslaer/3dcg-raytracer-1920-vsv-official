@@ -45,8 +45,9 @@ imaging::Color raytracer::raytracers::_private_::RayTracerV5::compute_reflection
 	const Hit& hit, const double weight) const
 {
 	if (props.reflectivity > 0) {
+		auto reflected = ray.direction.reflect_by(hit.normal);
 		math::Ray ray2 = math::Ray(
-			hit.position, ray.direction.reflect_by(hit.normal));
+			hit.position+0.000001* reflected, reflected);
 		return props.reflectivity * trace(scene, ray2, 
 			weight*props.reflectivity).color;
 	}

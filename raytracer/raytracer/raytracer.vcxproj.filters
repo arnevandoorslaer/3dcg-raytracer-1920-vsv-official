@@ -276,6 +276,12 @@
     <ClCompile Include="raytracers\ray-tracer-v5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="raytracers\ray-tracer-v6.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lights\directional-light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imaging\bitmap.h">
@@ -798,6 +804,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="raytracers\ray-tracer-v5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="raytracers\ray-tracer-v6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\directional-light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
