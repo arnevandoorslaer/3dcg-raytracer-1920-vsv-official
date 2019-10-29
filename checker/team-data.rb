@@ -12,6 +12,8 @@ team_member 'Arthur' do
   extension ParallelScheduler
   extension DirectionalLight
   extension PlaneYZ
+  extension Triangle
+  extension TriangleOptimized
 end
 
 team_member 'Arne' do
@@ -85,8 +87,6 @@ end
 # extension CylinderAlongXOptimized
 # extension CylinderAlongYOptimized
 # extension CylinderAlongZOptimized
-# extension Triangle
-# extension TriangleOptimized
 # extension BoundingBox
 # extension Cropper
 # extension CropperOptimized

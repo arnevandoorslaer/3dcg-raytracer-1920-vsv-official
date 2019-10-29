@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\raytracer",
     "\\raytracer\\raytracer",
-    "\\raytracer\\raytracer\\samplers",
-    "\\raytracer\\raytracer\\scripting"
+    "\\raytracer\\raytracer\\materials"
   ],
-  "SelectedNode": "\\checker",
+  "SelectedNode": "\\raytracer",
   "PreviewInSolutionExplorer": false
 }
