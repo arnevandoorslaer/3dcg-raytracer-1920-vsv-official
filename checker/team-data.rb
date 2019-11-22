@@ -14,6 +14,7 @@ team_member 'Arthur' do
   extension PlaneYZ
   extension Triangle
   extension TriangleOptimized
+  extension SpotLight
 end
 
 team_member 'Arne' do
@@ -21,6 +22,7 @@ team_member 'Arne' do
   extension BasicScripting
 
   extension RandomSampler
+  extension StratifiedSampler
 end
 
 team_member 'Stijn' do
@@ -33,7 +35,6 @@ end
 
 # Possible extensions
 
-# extension StratifiedSampler
 # extension JitteredSampler
 # extension HalfJitteredSampler
 # extension NRooksSampler
@@ -41,7 +42,6 @@ end
 # extension DepthOfFieldCamera
 # extension FisheyeCamera
 # extension OrthographicCamera
-# extension SpotLight
 # extension AreaLight
 # extension Voronoi2D
 # extension Voronoi3D

@@ -349,6 +349,7 @@
     <ClCompile Include="demos\basic-sample.cpp" />
     <ClCompile Include="demos\demo.cpp" />
     <ClCompile Include="lights\directional-light.cpp" />
+    <ClCompile Include="lights\spot-light.cpp" />
     <ClCompile Include="math\angle.cpp" />
     <ClCompile Include="animation\animation.cpp" />
     <ClCompile Include="animation\duration.cpp" />
@@ -415,6 +416,7 @@
     <ClCompile Include="samplers\random-sampler.cpp" />
     <ClCompile Include="samplers\sampler.cpp" />
     <ClCompile Include="samplers\single-sampler.cpp" />
+    <ClCompile Include="samplers\stratified-sampler.cpp" />
     <ClCompile Include="scripting\animation-module.cpp" />
     <ClCompile Include="scripting\cameras-module.cpp" />
     <ClCompile Include="scripting\imaging-module.cpp" />
@@ -485,6 +487,7 @@
     <ClInclude Include="demos\demo.h" />
     <ClInclude Include="demos\demos.h" />
     <ClInclude Include="lights\directional-light.h" />
+    <ClInclude Include="lights\spot-light.h" />
     <ClInclude Include="materials\composition-material.h" />
     <ClInclude Include="imaging\bitmap-function.h" />
     <ClInclude Include="cameras\camera.h" />
@@ -585,6 +588,7 @@
     <ClInclude Include="samplers\samplers.h" />
     <ClInclude Include="samplers\single-sampler.h" />
     <ClInclude Include="data-structures\array.h" />
+    <ClInclude Include="samplers\stratified-sampler.h" />
     <ClInclude Include="scripting\animation-module.h" />
     <ClInclude Include="scripting\cameras-module.h" />
     <ClInclude Include="scripting\imaging-module.h" />
