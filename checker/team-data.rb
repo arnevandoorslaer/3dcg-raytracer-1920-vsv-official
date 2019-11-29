@@ -31,6 +31,7 @@ team_member 'Stijn' do
   extension BasicScripting
   extension MaterialVerticalLines
   extension PlaneXZ
+  extension SquareXY
 end
 
 # Possible extensions
