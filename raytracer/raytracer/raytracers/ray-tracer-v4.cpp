@@ -8,13 +8,11 @@ imaging::Color raytracer::raytracers::_private_::RayTracerV4::process_light_ray(
 	const Scene& scene, const MaterialProperties& props, 
 	const Hit& hit, const math::Ray& ray, LightRay& lightray) const
 {
-	auto inter = scene.root->find_all_hits(lightray.ray);
-	for each (std::shared_ptr<Hit> hit in inter)
+	Hit shadowhit;
+	scene.root->find_first_positive_hit(lightray.ray, &shadowhit);
+	if (shadowhit.t >= 0 && shadowhit.t < 0.9999)
 	{
-		if (hit.get()->t >= 0 && hit.get()->t < 1)
-		{
-			return colors::black();
-		}
+		return colors::black();
 	}
 	return RayTracerV3::process_light_ray(scene,
 		props, hit, ray, lightray);

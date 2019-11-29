@@ -8,5 +8,6 @@ namespace raytracer
     {
 		Primitive xz_plane();
 		Primitive xy_plane();
+		Primitive yz_plane();
     }
 }

@@ -19,7 +19,7 @@ namespace raytracer
 				imaging::Color process_light_source(const Scene&,
 					const MaterialProperties&, const Hit&,
 					const math::Ray&, LightSource) const;
-				imaging::Color process_light_ray(const Scene&,
+				virtual imaging::Color process_light_ray(const Scene&,
 					const MaterialProperties&, const Hit&,
 					const math::Ray&, LightRay&) const;
 				imaging::Color compute_diffuse(const MaterialProperties&, 

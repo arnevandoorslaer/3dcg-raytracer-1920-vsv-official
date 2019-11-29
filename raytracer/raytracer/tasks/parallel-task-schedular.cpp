@@ -1,6 +1,8 @@
 #include "parallel-task-schedular.h"
 #include "thread"
 #include <algorithm>
+#include <atomic>
+#include "easylogging++.h"
 
 using namespace tasks;
 
@@ -12,30 +14,29 @@ namespace
 	public:
 		void perform(std::vector<std::shared_ptr<Task>> tasks) const
 		{	
-			int count = tasks.size();
-			while (count > 0) {
-				std::vector<std::thread *> threads(std::min(4, count));
-				for (size_t i = 0; i < threads.size(); ++i) 
-				{ // Start appropriate number of threads
-					threads[i] = new std::thread(tasks::schedulers::doTask, tasks[i]);
-				}
-				for (size_t i = 0; i < threads.size(); ++i) 
-				{ // Wait for all threads to finish
-					threads[i]->join();
-					delete threads[i];
-					--count;
-				}
+			std::atomic<int> i(0);
+			int aantalThreads = 20;
+			std::vector<std::thread> threads;
+			
+			for (int a = 0; a < aantalThreads; a++) {
+				std::thread t([&i, &tasks]() {
+					while (true)
+					{
+						int j = i++;
+						if (j >= tasks.size()) return;
+						tasks[j]->perform();
+					}
+				});
+				threads.push_back(std::move(t));
 			}
-
+			for (auto &t : threads) {
+				t.join();
+			}
 		}
 	};
-}
-void tasks::schedulers::doTask(std::shared_ptr<Task> t)
-{
-	t->perform();
 }
 
 TaskScheduler tasks::schedulers::parallel()
 {
-	return TaskScheduler();
+	return TaskScheduler(std::make_shared<ParallelTaskScheduler>());
 }

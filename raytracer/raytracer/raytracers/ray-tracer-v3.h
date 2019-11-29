@@ -11,12 +11,13 @@ namespace raytracer
 			class RayTracerV3 : public RayTracerV2
 			{
 			public:
-				imaging::Color process_light_ray(const Scene&,
+				virtual imaging::Color process_light_ray(
+					const Scene&,
 					const MaterialProperties&, const Hit&,
-					const math::Ray&, LightRay&) const;
+					const math::Ray&, LightRay&) const override;
 				imaging::Color compute_specular(
 					const MaterialProperties&, const Hit&,
-					const math::Ray&, const LightRay&)const ;
+					const math::Ray&, const LightRay&)const;
 			};
 		}
 		RayTracer v3();
