@@ -26,10 +26,16 @@ team_member 'Arne' do
 end
 
 team_member 'Stijn' do
+  # hieronder diff 5 (1)
+  # hieronder diff 4 (1)
+  # hieronder diff 3 (3)
+  # hieronder diff 2 (4)
+  extension MaterialCheckered2D
   extension MaterialGrid2d
+  extension MaterialVerticalLines
+  # hieronder diff 1 (5)
   extension BasicSample
   extension BasicScripting
-  extension MaterialVerticalLines
   extension PlaneXZ
   extension SquareXY
 end

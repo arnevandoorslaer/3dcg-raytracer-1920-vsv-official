@@ -11,7 +11,7 @@ $extensions = []
 $team = {}
 
 MINIMAL_REQUIREMENTS_BY_DIFFICULTY = [5, 4, 3, 1, 1]
-
+puts "Minimal requirements by diff: #{MINIMAL_REQUIREMENTS_BY_DIFFICULTY}"
 
 Extension = Struct.new(:name, :difficulty, :allow_multiple, :mutually_exclusive) do
   def to_s
