@@ -51,7 +51,7 @@ def schrijf_doosje(driehoeken):
     schrijver = open(schrijfbestand, "a")
     for d in driehoeken:
         schrijver.write(str(d) + "\n")
-    schrijver.write("box " + str(len(driehoeken)) + "\n")
+    schrijver.write("b " + str(len(driehoeken)) + "\n")
     schrijver.close()
 
 def create_box_structure(driehoeken):
@@ -88,9 +88,10 @@ def create_box_structure(driehoeken):
         create_box_structure(deel1)
         create_box_structure(deel2)
         # wa dozen maken om de vorige dozen in te steken
-        dozenmaken = open(schrijfbestand, "a")
-        dozenmaken.write("box 2\n")
-        dozenmaken.close()
+        if len(deel1) > 0 and len(deel2) > 0:
+            dozenmaken = open(schrijfbestand, "a")
+            dozenmaken.write("b 2\n")
+            dozenmaken.close()
 
     elif len(driehoeken) > 0:
         schrijf_doosje(driehoeken)
@@ -109,7 +110,7 @@ create_box_structure(alle_driehoeken)
 # afsluiten
 print("Processing done, closing file...")
 sluit = open(schrijfbestand, "a")
-sluit.write("stop")
+sluit.write("x")
 sluit.close()
 bunny.close()
 print("Application finished!")

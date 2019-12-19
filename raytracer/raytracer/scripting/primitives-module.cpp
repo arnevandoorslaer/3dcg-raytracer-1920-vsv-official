@@ -47,6 +47,7 @@ ModulePtr raytracer::scripting::_private_::create_primitives_module()
 	BIND_DIRECTLY(triangle);
 	BIND_DIRECTLY(xy_square);
 	BIND_DIRECTLY(bounding_box_accelerator);
+	BIND_DIRECTLY(mesh);
     BIND_HELPER_FUNCTION_AS(make_union, union);
     BIND_DIRECTLY(decorate);
     BIND_DIRECTLY(translate);
