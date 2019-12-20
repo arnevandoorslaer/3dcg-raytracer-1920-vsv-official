@@ -3,11 +3,14 @@ from PointAndTriangle import Point
 from PointAndTriangle import Triangle
 import highest_lowest
 
+# OP DESKTOP
 # bunny = open("H:/Users/Gebruiker/Documents/3D/"
 # "3dcg-raytracer-1920-vsv-official/Mesh Arthur/bunny.mesh", "r")
-bunny = open("H:/Users/Gebruiker/Documents/3D/"
-"3dcg-raytracer-1920-vsv-official/Mesh Arthur/bunny.mesh", "r")
-schrijfbestand = "C:/Users/kinga/Documents/outputBunny2.txt"
+# schrijfbestand = "C:/Users/kinga/Documents/outputBunny2.txt"
+
+# OP LAPTOP
+bunny = open("temp.mesh", "r")
+schrijfbestand = "D:/Documenten/Workspace3D/3dcg-raytracer-1920-vsv-official/Mesh Arthur/output2.txt"
 
 aantal_punten = int(float(bunny.readline()))
 print('There are {} points to be created!'.format(aantal_punten))
@@ -110,7 +113,7 @@ create_box_structure(alle_driehoeken)
 # afsluiten
 print("Processing done, closing file...")
 sluit = open(schrijfbestand, "a")
-sluit.write("x")
+sluit.write("x\n")
 sluit.close()
 bunny.close()
 print("Application finished!")

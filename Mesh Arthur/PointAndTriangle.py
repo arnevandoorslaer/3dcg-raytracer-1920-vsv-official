@@ -16,7 +16,7 @@ class Triangle:
         self.p3 = punt3
 
     def __str__(self):
-        return 't {} {} {}'.format(self.p1, self.p2, self.p3)
+        return 'triangle {} {} {}'.format(self.p1, self.p2, self.p3)
     
     def min_x(self):
         return min(self.p1.x, self.p2.x, self.p3.x)

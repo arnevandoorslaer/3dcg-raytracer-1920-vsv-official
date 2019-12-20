@@ -20,9 +20,7 @@ Primitive primitives::mesh(const std::string& file)
 	string sort;
 	double x1, y1, z1, x2, y2, z2, x3, y3, z3;
 
-	bool gedaan = false;
-
-	while (!gedaan)
+	while (true)
 	{
 		input >> sort;
 		// triangle, box or stop
@@ -83,7 +81,7 @@ Primitive primitives::mesh(const std::string& file)
 			// doos lekker trg op stapel, is al een zware doos nu
 			stapeltje.push(MeesterDoos);
 			// tis gedaan dan zeker
-			gedaan = true;
+			break;
 		}
 		else
 		{
