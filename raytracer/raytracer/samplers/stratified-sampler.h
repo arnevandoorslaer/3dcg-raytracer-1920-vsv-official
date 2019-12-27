@@ -7,6 +7,6 @@ namespace raytracer
 {
 	namespace samplers
 	{
-		Sampler stratified(const int& n, const int& m);
+		Sampler stratified(const int& width, const int& height);
 	}
 }

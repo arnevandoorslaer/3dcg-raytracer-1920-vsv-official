@@ -25,6 +25,10 @@ team_member 'Arne' do
 
   extension RandomSampler
   extension StratifiedSampler
+  extension JitteredSampler
+  extension HalfJitteredSampler
+  extension NRooksSampler
+  extension MultijitteredSampler
 end
 
 team_member 'Stijn' do
@@ -44,10 +48,7 @@ end
 
 # Possible extensions
 
-# extension JitteredSampler
-# extension HalfJitteredSampler
-# extension NRooksSampler
-# extension MultijitteredSampler
+
 # extension DepthOfFieldCamera
 # extension FisheyeCamera
 # extension OrthographicCamera

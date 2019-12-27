@@ -26,6 +26,23 @@ namespace
 			return samplers::stratified(n, m);
 		}
 
+		Sampler jittered(const int& n, const int& m) const
+		{
+			return samplers::jittered(n, m);
+		}		
+		Sampler halfJittered(const int& n, const int& m) const
+		{
+			return samplers::halfJittered(n, m);
+		}		
+		Sampler nRooks(const int& n) const
+		{
+			return samplers::nRooks(n);
+		}		
+		Sampler multiJittered(const int& n) const
+		{
+			return samplers::multiJittered(n);
+		}
+
     };
 }
 
@@ -42,6 +59,10 @@ ModulePtr raytracer::scripting::_private_::create_samplers_module()
     BIND(single);
 	BIND(random);
 	BIND(stratified);
+	BIND(jittered);
+	BIND(halfJittered);
+	BIND(nRooks);
+	BIND(multiJittered);
 #   undef BIND
 
     return module;

@@ -5,8 +5,8 @@
 
 namespace raytracer
 {
-    namespace samplers
-    {
-        Sampler single();
-    }
+	namespace samplers
+	{
+		Sampler nRooks(int n);
+	}
 }
