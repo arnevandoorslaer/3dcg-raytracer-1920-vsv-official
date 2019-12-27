@@ -16,6 +16,7 @@ team_member 'Arthur' do
   extension TriangleOptimized
   extension SpotLight
   extension BoundingBox
+  extension Mesh
 end
 
 team_member 'Arne' do
