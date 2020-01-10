@@ -1,34 +1,52 @@
 team_member 'Arthur' do
-  extension BasicSample
-  extension BasicScripting
 
-  extension RayTracerV1
+  # hieronder diff 5 (1)
+  extension Mesh
+  # hieronder diff 4 (1)
+  extension RayTracerV6
+  # hieronder diff 3 (3)
+  extension ParallelScheduler
+  extension RayTracerV5
+  extension SpotLight
+  # hieronder diff 2 (4)
   extension RayTracerV2
   extension RayTracerV3
   extension RayTracerV4
-  extension RayTracerV5
-  extension RayTracerV6
-
-  extension ParallelScheduler
-  extension DirectionalLight
-  extension PlaneYZ
   extension Triangle
-  extension TriangleOptimized
-  extension SpotLight
   extension BoundingBox
-  extension Mesh
+  extension DirectionalLight
+  # hieronder diff 1 (5)
+  extension BasicSample
+  extension BasicScripting
+  extension RayTracerV1
+  extension PlaneYZ
+  extension TriangleOptimized
+
+
+
+
+
+
+
+
+
 end
 
 team_member 'Arne' do
-  extension BasicSample
-  extension BasicScripting
+  # hieronder diff 5 (1)
+  # hieronder diff 4 (1)
 
+  # hieronder diff 3 (3)
+  extension NRooksSampler
+  extension MultijitteredSampler
+  # hieronder diff 2 (4)
   extension RandomSampler
   extension StratifiedSampler
   extension JitteredSampler
   extension HalfJitteredSampler
-  extension NRooksSampler
-  extension MultijitteredSampler
+  # hieronder diff 1 (5)
+  extension BasicSample
+  extension BasicScripting
 end
 
 team_member 'Stijn' do
