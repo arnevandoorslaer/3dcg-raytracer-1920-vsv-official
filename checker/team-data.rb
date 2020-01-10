@@ -47,6 +47,8 @@ team_member 'Arne' do
   # hieronder diff 1 (5)
   extension BasicSample
   extension BasicScripting
+  extension PlaneXZOptimized
+  extension PlaneYZOptimized
 end
 
 team_member 'Stijn' do
@@ -94,8 +96,6 @@ end
 # extension MaterialTranslate3D
 # extension MaterialRotate2D
 # extension MaterialRotate3D
-# extension PlaneXZOptimized
-# extension PlaneYZOptimized
 # extension ConeAlongX
 # extension ConeAlongY
 # extension ConeAlongZ
