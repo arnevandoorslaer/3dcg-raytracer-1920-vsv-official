@@ -21,15 +21,6 @@ team_member 'Arthur' do
   extension RayTracerV1
   extension PlaneYZ
   extension TriangleOptimized
-
-
-
-
-
-
-
-
-
 end
 
 team_member 'Arne' do
@@ -48,7 +39,7 @@ team_member 'Arne' do
   extension BasicSample
   extension BasicScripting
   extension PlaneXZOptimized
-  extension PlaneYZOptimized
+  extension SquareXYOptimized
 end
 
 team_member 'Stijn' do
