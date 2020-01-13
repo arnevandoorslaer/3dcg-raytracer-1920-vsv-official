@@ -30,6 +30,7 @@ team_member 'Arne' do
   # hieronder diff 3 (3)
   extension NRooksSampler
   extension MultijitteredSampler
+  extension ConeAlongX
   # hieronder diff 2 (4)
   extension RandomSampler
   extension StratifiedSampler
@@ -89,7 +90,6 @@ end
 # extension MaterialTranslate3D
 # extension MaterialRotate2D
 # extension MaterialRotate3D
-# extension ConeAlongX
 # extension ConeAlongY
 # extension ConeAlongZ
 # extension ConeAlongXOptimized
