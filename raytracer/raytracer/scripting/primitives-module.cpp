@@ -23,6 +23,17 @@ namespace
 
         return primitives::make_union(children);
     }
+
+	Primitive make_intersection(const std::vector<chaiscript::Boxed_Value>& boxed_children)
+	{
+		std::vector<Primitive> children(boxed_children.size());
+
+		std::transform(boxed_children.begin(), boxed_children.end(), children.begin(), [](chaiscript::Boxed_Value boxed) {
+			return chaiscript::boxed_cast<Primitive>(boxed);
+			});
+
+		return primitives::make_intersection(children);
+	}
 }
 
 ModulePtr raytracer::scripting::_private_::create_primitives_module()
@@ -49,6 +60,7 @@ ModulePtr raytracer::scripting::_private_::create_primitives_module()
 	BIND_DIRECTLY(bounding_box_accelerator);
 	BIND_DIRECTLY(mesh);
     BIND_HELPER_FUNCTION_AS(make_union, union);
+    BIND_HELPER_FUNCTION_AS(make_intersection, intersection);
     BIND_DIRECTLY(decorate);
     BIND_DIRECTLY(translate);
 	BIND_DIRECTLY(rotate_around_x);

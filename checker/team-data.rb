@@ -26,7 +26,7 @@ end
 team_member 'Arne' do
   # hieronder diff 5 (1)
   # hieronder diff 4 (1)
-
+  extension Intersection
   # hieronder diff 3 (3)
   extension NRooksSampler
   extension MultijitteredSampler
@@ -112,7 +112,6 @@ end
 # extension Cropper
 # extension CropperOptimized
 # extension Bumpifier
-# extension Intersection
 # extension IntersectionOptimized
 # extension Difference
 # extension DifferenceOptimized
