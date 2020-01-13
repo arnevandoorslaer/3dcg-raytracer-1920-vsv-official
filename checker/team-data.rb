@@ -40,6 +40,8 @@ team_member 'Arne' do
   extension BasicScripting
   extension PlaneXZOptimized
   extension SquareXYOptimized
+  extension PrimitiveRotationX
+
 end
 
 team_member 'Stijn' do
@@ -115,7 +117,6 @@ end
 # extension Difference
 # extension DifferenceOptimized
 # extension PrimitiveScaling
-# extension PrimitiveRotationX
 # extension PrimitiveRotationY
 # extension PrimitiveRotationZ
 # extension Group
