@@ -1,0 +1,54 @@
+def scene_at(now)
+{
+  var camera = Cameras.perspective( [ "eye": pos(0,0,1),
+                                      "look_at": pos(0,0,0) ] )
+
+  var material = Materials.uniform( [ "ambient": Colors.white() * 0.1,
+                                      "diffuse": Colors.white() * 0.8,
+                                      "specular": Colors.white() * 0.5,
+                                      "specular_exponent": 10,
+                                      "reflectivity": 0.0,
+                                      "transparency": 0,
+                                      "refractive_index": 0 ] )
+                                      
+  var material2 = Materials.uniform( [ "ambient": Colors.white() * 0.1,
+                                      "diffuse": Colors.blue() * 0.8,
+                                      "specular": Colors.white() * 0.5,
+                                      "specular_exponent": 10 ] )
+                                      
+  var white = Materials.uniform( [ "ambient": Colors.white() * 0.1,
+								   "diffuse": Colors.white() * 0.8 ] )
+
+  var cylinder = decorate(material2, cone_along_x())
+  var e = Animations.animate( -5, 5, seconds(5) )
+  scale(e[now], e[now], e[now], cylinder)
+  var primitives = []
+
+  [1..10].for_each( bind( fun (i, primitives, cylinder, now) {
+    var size = i
+    var s = Animations.animate(1.0, size, seconds(1))[now]
+
+    primitives.push_back( scale( -size, -1/s, -size, cylinder ) )
+  }, _, primitives, cylinder, now ) )
+
+  var root = decorate(material, union(primitives))
+
+  var lights = [ Lights.omnidirectional( pos(0,0,0), Colors.white() ) ]
+
+  create_scene(camera, root, lights)
+}
+
+
+var raytracer   = Raytracers.v6()
+
+var renderer    = Renderers.standard( [ "width": 100,
+                                       "height": 100,
+                                       "sampler": Samplers.multiJittered(3),
+                                       "ray_tracer": raytracer ] )
+
+pipeline( scene_animation(scene_at, seconds(5)),
+          [ Pipeline.animation(30),
+            Pipeline.renderer(renderer),
+            Pipeline.wif(),
+            Pipeline.base64(),
+            Pipeline.stdout()  ] )

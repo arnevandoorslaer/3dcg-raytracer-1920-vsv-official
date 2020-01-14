@@ -54,6 +54,7 @@ team_member 'Stijn' do
   extension MaterialGrid2d
   extension MaterialVerticalLines
   # hieronder diff 1 (5)
+  extension PrimitiveScaling
   extension BasicSample
   extension BasicScripting
   extension PlaneXZ
