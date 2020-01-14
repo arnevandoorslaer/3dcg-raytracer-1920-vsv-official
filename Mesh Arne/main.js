@@ -34,9 +34,7 @@ class Triangle {
   }
 }
 
-
-
-let input = "temp.mesh", output = "output.mesh";
+let input = "bunny.mesh", output = "output.mesh";
 let result = "";
 
 let fs = require('fs'), path = require('path');
@@ -174,9 +172,8 @@ function create_box_structure(triangles){
 
     if(first.length == 0){
       let loop_length = Math.floor(second.length/2);
-      let copyofsecond = second.slice();
       for (let i = 0;i < loop_length;i++) {
-        first.push(copyofsecond[0]);
+        first.push(second[0]);
         second.splice(0,1);
       }
     }
