@@ -9,7 +9,7 @@ class Triangle
     end
 
     def to_s()
-        "#{@p1} #{@p2} #{@p3}"
+        "triangle #{@p1} #{@p2} #{@p3}\n"
     end
 
     def min(attr)
