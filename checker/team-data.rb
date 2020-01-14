@@ -8,6 +8,7 @@ team_member 'Arthur' do
   extension ParallelScheduler
   extension RayTracerV5
   extension SpotLight
+  extension ConeAlongY
   # hieronder diff 2 (4)
   extension RayTracerV2
   extension RayTracerV3
@@ -52,6 +53,7 @@ team_member 'Stijn' do
   # hieronder diff 4 (1)
   extension Difference
   # hieronder diff 3 (3)
+  extension ConeAlongZ
   # hieronder diff 2 (4)
   extension MaterialCheckered2D
   extension MaterialGrid2d
