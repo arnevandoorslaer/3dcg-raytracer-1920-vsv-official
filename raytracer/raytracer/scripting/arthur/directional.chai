@@ -1,0 +1,56 @@
+def scene_at(now)
+{
+  var x = Animations.animate(-20, 20, seconds(5))
+  var camera = Cameras.perspective( [ "eye": pos(x[now],20,-20),
+                                      "look_at": pos(0,0,0) ] )
+
+  var floor_material = Materials.uniform( [ "ambient": Colors.white() * 0.1,
+                                            "diffuse": Colors.white() * 0.8,
+                                            "reflectivity": 0.5 ] )
+
+  var left_wall_material = Materials.uniform( [ "ambient": Colors.red() * 0.1,
+                                                "diffuse": Colors.red() * 0.8 ] )
+
+  var right_wall_material = Materials.uniform( [ "ambient": Colors.green() * 0.1,
+                                                 "diffuse": Colors.green() * 0.8 ] )
+
+  var back_wall_material = Materials.uniform( [ "ambient": Colors.blue() * 0.1,
+                                                "diffuse": Colors.blue() * 0.8 ] )
+
+  var ceiling_material = floor_material
+  
+  var material = Materials.uniform( [ "ambient": Colors.yellow() * 0.4,
+                                      "diffuse": Colors.white() * 0.8 ,
+                                      "specular": Colors.white() * 0.8,
+                                      "specular_exponent": 10,
+                                      "reflectivity": 0,
+                                      "transparency": 0,
+                                      "refractive_index": 0] )
+
+  
+  var primitives = []
+  primitives.push_back( translate(vec(0,-1,0), decorate(floor_material, xz_plane())) )
+
+  primitives.push_back( translate(vec(0, 0, 0), decorate(material, sphere())) )
+    
+  for ( var i = -10; i != 10; ++i ){ primitives.push_back( translate(vec(i * 2, 0, 0), decorate(material, sphere()))) }
+
+  var root = union(primitives)
+  
+  var p = Animations.animate(-1,1,seconds(5))
+ var lights = [ Lights.directional( vec(p[now],-0.1,1).normalized(), Colors.white() )]
+
+  create_scene(camera, root, lights)
+}
+
+var renderer = Renderers.standard( [ "width": 500,
+                                     "height": 500,
+                                     "sampler": Samplers.single(),
+                                     "ray_tracer": Raytracers.v4() ] )
+
+pipeline( scene_animation(scene_at, seconds(5)),
+          [ Pipeline.animation(30),
+            Pipeline.renderer(renderer),
+            Pipeline.wif(),
+            Pipeline.base64(),
+            Pipeline.stdout() ] )
