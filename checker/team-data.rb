@@ -48,6 +48,7 @@ end
 team_member 'Stijn' do
   # hieronder diff 5 (1)
   # hieronder diff 4 (1)
+  extension Difference
   # hieronder diff 3 (3)
   # hieronder diff 2 (4)
   extension MaterialCheckered2D
