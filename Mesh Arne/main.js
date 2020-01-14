@@ -36,7 +36,7 @@ class Triangle {
 
 
 
-let input = "bunny.mesh", output = "output.mesh";
+let input = "temp.mesh", output = "output.mesh";
 let result = "";
 
 let fs = require('fs'), path = require('path');
@@ -117,14 +117,16 @@ function get_triangles(){
   let point_count = textArray.splice(0, 1);
   let points = [], triangles = [];
   for (i = 0;i < point_count;i++) {
-    let coords = textArray[i].split(' ');
+    let normalized = textArray[i].replace("\r", "");
+    let coords = normalized.split(' ');
     points[i] = new Point(coords[0],coords[1],coords[2]);
   }
   textArray.splice(0, point_count);
 
   let triangle_count = textArray.splice(0, 1);
   for (i = 0;i < triangle_count;i++){
-    let triangle_points = textArray[i].split(' ');
+    let normalized = textArray[i].replace("\r", "");
+    let triangle_points = normalized.split(' ');
     triangles[i] = new Triangle(points[triangle_points[0]],points[triangle_points[1]],points[triangle_points[2]]);
   }
   return triangles;
