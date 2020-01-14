@@ -34,6 +34,8 @@ class Triangle {
   }
 }
 
+
+
 let input = "bunny.mesh", output = "output.mesh";
 let result = "";
 
@@ -109,27 +111,23 @@ function highest_z(triangles){
   return result
 }
 
-let textArray = readFile(input).split('\n');
+function get_triangles(){
+  let textArray = readFile(input).split('\n');
 
-let point_count = textArray[0];
-textArray.splice(0, 1);
+  let point_count = textArray.splice(0, 1);
+  let points = [], triangles = [];
+  for (i = 0;i < point_count;i++) {
+    let coords = textArray[i].split(' ');
+    points[i] = new Point(coords[0],coords[1],coords[2]);
+  }
+  textArray.splice(0, point_count);
 
-let points = [];
-for (i = 0;i < point_count;i++) {
-  let coords = textArray[i].split(' ');
-  let point = new Point(coords[0],coords[1],coords[2]);
-  points[i] = point;
-}
-
-textArray.splice(0, point_count);
-let triangle_count = textArray[0];
-textArray.splice(0, 1);
-
-let triangles = [];
-for (i = 0;i < triangle_count;i++){
-  let triangle_points = textArray[i].split(' ');
-  let triangle = new Triangle(points[triangle_points[0]],points[triangle_points[1]],points[triangle_points[2]]);
-  triangles[i] = triangle;
+  let triangle_count = textArray.splice(0, 1);
+  for (i = 0;i < triangle_count;i++){
+    let triangle_points = textArray[i].split(' ');
+    triangles[i] = new Triangle(points[triangle_points[0]],points[triangle_points[1]],points[triangle_points[2]]);
+  }
+  return triangles;
 }
 
 function x_in_box(triangle, min, max){return (triangle.min_x() > min) && (triangle.max_x() < max);}
@@ -191,6 +189,6 @@ function create_box_structure(triangles){
 }
 
 clearFile(output);
-create_box_structure(triangles);
+create_box_structure(get_triangles());
 result += "stop";
 writeFile(output,result);
