@@ -1,29 +1,48 @@
 team_member 'Arthur' do
-  extension BasicSample
-  extension BasicScripting
 
-  extension RayTracerV1
+  # hieronder diff 5 (1)
+  extension Mesh
+  # hieronder diff 4 (1)
+  extension RayTracerV6
+  # hieronder diff 3 (3)
+  extension ParallelScheduler
+  extension RayTracerV5
+  extension SpotLight
+  # hieronder diff 2 (4)
   extension RayTracerV2
   extension RayTracerV3
   extension RayTracerV4
-  extension RayTracerV5
-  extension RayTracerV6
-
-  extension ParallelScheduler
-  extension DirectionalLight
-  extension PlaneYZ
   extension Triangle
-  extension TriangleOptimized
-  extension SpotLight
   extension BoundingBox
+  extension DirectionalLight
+  # hieronder diff 1 (5)
+  extension BasicSample
+  extension BasicScripting
+  extension RayTracerV1
+  extension PlaneYZ
+  extension TriangleOptimized
 end
 
 team_member 'Arne' do
-  extension BasicSample
-  extension BasicScripting
-
+  # hieronder diff 5 (1)
+  # hieronder diff 4 (1)
+  extension Intersection
+  # hieronder diff 3 (3)
+  extension NRooksSampler
+  extension MultijitteredSampler
+  extension ConeAlongX
+  # hieronder diff 2 (4)
   extension RandomSampler
   extension StratifiedSampler
+  extension JitteredSampler
+  extension HalfJitteredSampler
+  # hieronder diff 1 (5)
+  extension BasicSample
+  extension BasicScripting
+  extension PlaneXZOptimized
+  extension SquareXYOptimized
+  extension PrimitiveRotationX
+
 end
 
 team_member 'Stijn' do
@@ -43,10 +62,7 @@ end
 
 # Possible extensions
 
-# extension JitteredSampler
-# extension HalfJitteredSampler
-# extension NRooksSampler
-# extension MultijitteredSampler
+
 # extension DepthOfFieldCamera
 # extension FisheyeCamera
 # extension OrthographicCamera
@@ -74,9 +90,6 @@ end
 # extension MaterialTranslate3D
 # extension MaterialRotate2D
 # extension MaterialRotate3D
-# extension PlaneXZOptimized
-# extension PlaneYZOptimized
-# extension ConeAlongX
 # extension ConeAlongY
 # extension ConeAlongZ
 # extension ConeAlongXOptimized
@@ -99,12 +112,10 @@ end
 # extension Cropper
 # extension CropperOptimized
 # extension Bumpifier
-# extension Intersection
 # extension IntersectionOptimized
 # extension Difference
 # extension DifferenceOptimized
 # extension PrimitiveScaling
-# extension PrimitiveRotationX
 # extension PrimitiveRotationY
 # extension PrimitiveRotationZ
 # extension Group

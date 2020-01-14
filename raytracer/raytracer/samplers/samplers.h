@@ -2,3 +2,7 @@
 #include "samplers/single-sampler.h"
 #include "samplers/random-sampler.h"
 #include "samplers/stratified-sampler.h"
+#include "samplers/jittered-sampler.h"
+#include "samplers/half-jittered-sampler.h"
+#include "samplers/n-rooks-sampler.h"
+#include "samplers/multi-jittered-sampler.h"

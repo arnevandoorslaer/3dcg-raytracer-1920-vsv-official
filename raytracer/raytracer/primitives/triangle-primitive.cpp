@@ -21,7 +21,19 @@ namespace
 
 		math::Box bounding_box() const override
 		{
-			return Box(Interval<double>::infinite(), Interval<double>::infinite(), interval(-0.01, 0.01));
+			auto x_min = std::min({ p1.x(), p2.x(), p3.x() });
+			auto y_min = std::min({ p1.y(), p2.y(), p3.y() });
+			auto z_min = std::min({ p1.z(), p2.z(), p3.z() });
+
+			auto x_max = std::max({ p1.x(), p2.x(), p3.x() });
+			auto y_max = std::max({ p1.y(), p2.y(), p3.y() });
+			auto z_max = std::max({ p1.z(), p2.z(), p3.z() });
+
+			return Box(
+				interval(x_min, x_max),
+				interval(y_min, y_max),
+				interval(z_min, z_max)
+			);
 		}
 
 		void initialize_hit(Hit* hit, const Ray& ray, double t) const

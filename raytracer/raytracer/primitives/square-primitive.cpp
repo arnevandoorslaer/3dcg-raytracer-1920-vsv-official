@@ -62,7 +62,34 @@ namespace
 			return hits;
 
 		}
+
+		bool find_first_positive_hit(const Ray& ray, Hit* output_hit) const override
+		{
+			// Compute denominator
+			double denom = ray.direction.dot(m_normal);
+
+			// If denominator == 0, there is no intersection (ray runs parallel to square)
+			if (denom != approx(0.0))
+			{
+				// Compute numerator
+				double numer = -((ray.origin - Point3D(0, 0, 0)).dot(m_normal));
+
+				// Compute t
+				double t = numer / denom;
+				if (t < 0 || t >= output_hit->t) return false;
+
+				// shared_ptr<T>::get() returns the T* inside the shared pointer
+				initialize_hit(output_hit, ray, t);
+
+				if (bounding_box().contains(output_hit->position)) {
+					// Put hit in list
+					return true;
+				}
+			}
+			return false;
+		}
 	};
+
 
 	class SquareXYImplementation : public CoordinatePlaneImplementation {
 

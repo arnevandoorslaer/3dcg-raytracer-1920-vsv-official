@@ -8,3 +8,6 @@
 #include "primitives/decorator-primitive.h"
 #include "primitives/transformer-primitive.h"
 #include "primitives/bounding-box-accelerator.h"
+#include "primitives/cone-primitive.h"
+#include "primitives/intersection-primitive.h"
+#include "mesh/mesh.h"

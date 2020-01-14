@@ -8,31 +8,28 @@ namespace
 {
 	class StratifiedSampler : public samplers::_private_::SamplerImplementation
 	{
-	public:
-		int n;
-		int m;
-
-		explicit StratifiedSampler(const int& n, const int& m)
-		{
-			this->n = n;
-			this->m = m;
-		}
-
-		std::vector<Point2D> sample(const Rectangle2D& rectangle) const override
-		{
-			std::vector<Point2D> result;
-			auto rasterizer = Rasterizer(rectangle, n, m);
-
-			for (auto i = 0; i < n; i++)
+		public:
+			StratifiedSampler(const int& n, const int& m)
 			{
-				for (auto j = 0; j < m; j++)
+				this->n = n;
+				this->m = m;
+			}
+
+		private:
+			int n;
+			int m;
+
+		public:
+			void sample(const math::Rectangle2D& rectangle, std::function<void(const math::Point2D&)> function) const override
+			{
+				for (auto i = 0; i < n; i++)
 				{
-					auto sub_rectangle = rasterizer[Position2D(i, j)];
-					result.push_back(sub_rectangle.center());
+					for (auto j = 0; j < m; j++)
+					{
+						function(rectangle.from_relative(Point2D((1 / n) * (i + 0.5), (1 / m) * (j + 0.5))));
+					}
 				}
 			}
-			return result;
-		}
 	};
 }
 
