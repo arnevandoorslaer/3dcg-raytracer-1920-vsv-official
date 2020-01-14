@@ -36,7 +36,7 @@ class Triangle {
 
 
 
-let input = "bunny.mesh", output = "output.mesh";
+let input = "temp.mesh", output = "output.mesh";
 let result = "";
 
 let fs = require('fs'), path = require('path');
@@ -117,16 +117,19 @@ function get_triangles(){
   let point_count = textArray.splice(0, 1);
   let points = [], triangles = [];
   for (i = 0;i < point_count;i++) {
-    let coords = textArray[i].split(' ');
+    let normalized = textArray[i].replace("\r", "");
+    let coords = normalized.split(' ');
     points[i] = new Point(coords[0],coords[1],coords[2]);
   }
   textArray.splice(0, point_count);
 
   let triangle_count = textArray.splice(0, 1);
   for (i = 0;i < triangle_count;i++){
-    let triangle_points = textArray[i].split(' ');
+    let normalized = textArray[i].replace("\r", "");
+    let triangle_points = normalized.split(' ');
     triangles[i] = new Triangle(points[triangle_points[0]],points[triangle_points[1]],points[triangle_points[2]]);
   }
+  console.log(triangles);
   return triangles;
 }
 
@@ -152,6 +155,8 @@ function create_box_structure(triangles){
       min_x = lowest_x(triangles);
       center_x = min_x + (x_width / 2);
       for (triangle of triangles){
+        console.log("x");
+        //console.log(x_in_box(triangle, min_x, center_x) ? first.push(triangle));
         x_in_box(triangle, min_x, center_x) ? first.push(triangle) : second.push(triangle);
       }
     }
@@ -159,6 +164,8 @@ function create_box_structure(triangles){
       min_y = lowest_y(triangles);
       center_y = min_y + (y_width / 2);
       for (triangle of triangles){
+        console.log("y");
+        //console.log(y_in_box(triangle, min_y, center_y));
         y_in_box(triangle, min_y, center_y) ? first.push(triangle) : second.push(triangle);
       }
     }
