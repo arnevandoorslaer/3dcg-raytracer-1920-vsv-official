@@ -1,7 +1,7 @@
 require_relative "triangle"
 require_relative "functions"
 
-infile = "bunny.mesh"
+infile = "temp.mesh"
 meshfile = File.readlines(infile, "r")[0].split("\n")
 output = infile.concat(".out.txt")
 @result = ""
@@ -37,7 +37,7 @@ def create_box_structure(triangles)
             min_x = lowest("x", triangles)
             center_x = min_x + (widths[:x_width] / 2)
             for triangle in triangles
-                x_in_box(triangle, min_x, center_x) ? first << triangle : second << triangle
+                in_box("x", triangle, min_x, center_x) ? first << triangle : second << triangle
             end
 
         elsif widths.values().max == widths[:y_width]
