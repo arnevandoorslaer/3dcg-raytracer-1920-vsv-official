@@ -34,6 +34,7 @@ class Triangle {
   }
 }
 
+let input = "bunny.mesh", output = "output.mesh";
 let result = "";
 
 let fs = require('fs'), path = require('path');
@@ -108,8 +109,6 @@ function highest_z(triangles){
   return result
 }
 
-let input = "temp.mesh", output = "output.mesh";
-
 let textArray = readFile(input).split('\n');
 
 let point_count = textArray[0];
@@ -161,7 +160,7 @@ function create_box_structure(triangles){
     else if (Math.max(x_width, y_width, z_width) == y_width) {
       min_y = lowest_y(triangles);
       center_y = min_y + (y_width / 2);
-      for (triangle of triangles_t){
+      for (triangle of triangles){
         y_in_box(triangle, min_y, center_y) ? first.push(triangle) : second.push(triangle);
       }
     }
