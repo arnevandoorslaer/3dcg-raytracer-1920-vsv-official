@@ -129,7 +129,6 @@ function get_triangles(){
     let triangle_points = normalized.split(' ');
     triangles[i] = new Triangle(points[triangle_points[0]],points[triangle_points[1]],points[triangle_points[2]]);
   }
-  console.log(triangles);
   return triangles;
 }
 
@@ -155,8 +154,6 @@ function create_box_structure(triangles){
       min_x = lowest_x(triangles);
       center_x = min_x + (x_width / 2);
       for (triangle of triangles){
-        console.log("x");
-        //console.log(x_in_box(triangle, min_x, center_x) ? first.push(triangle));
         x_in_box(triangle, min_x, center_x) ? first.push(triangle) : second.push(triangle);
       }
     }
@@ -164,8 +161,6 @@ function create_box_structure(triangles){
       min_y = lowest_y(triangles);
       center_y = min_y + (y_width / 2);
       for (triangle of triangles){
-        console.log("y");
-        //console.log(y_in_box(triangle, min_y, center_y));
         y_in_box(triangle, min_y, center_y) ? first.push(triangle) : second.push(triangle);
       }
     }
