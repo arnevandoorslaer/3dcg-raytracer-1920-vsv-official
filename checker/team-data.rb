@@ -21,9 +21,12 @@ team_member 'Arthur' do
   extension BasicSample
   extension BasicScripting
   extension RayTracerV1
-  extension PlaneYZ
   extension TriangleOptimized
   extension PrimitiveRotationZ
+  extension PlaneYZ
+  extension PlaneYZOptimized
+  extension SquareXZ
+  extension SquareXZOptimized
 end
 
 team_member 'Arne' do
