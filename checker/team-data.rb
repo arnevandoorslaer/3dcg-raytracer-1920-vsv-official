@@ -16,12 +16,14 @@ team_member 'Arthur' do
   extension Triangle
   extension BoundingBox
   extension DirectionalLight
+  extension ConeAlongYOptimized
   # hieronder diff 1 (5)
   extension BasicSample
   extension BasicScripting
   extension RayTracerV1
   extension PlaneYZ
   extension TriangleOptimized
+  extension PrimitiveRotationZ
 end
 
 team_member 'Arne' do
@@ -44,7 +46,7 @@ team_member 'Arne' do
   extension PlaneXZOptimized
   extension SquareXYOptimized
   extension PrimitiveRotationX
-
+  extension RayTracerV1
 end
 
 team_member 'Stijn' do
@@ -66,6 +68,7 @@ team_member 'Stijn' do
   extension PlaneXZ
   extension SquareXY
   extension PrimitiveRotationY
+  extension RayTracerV1
 end
 
 # Possible extensions
