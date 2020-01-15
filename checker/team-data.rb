@@ -64,6 +64,7 @@ team_member 'Stijn' do
   extension BasicScripting
   extension PlaneXZ
   extension SquareXY
+  extension PrimitiveRotationY
 end
 
 # Possible extensions

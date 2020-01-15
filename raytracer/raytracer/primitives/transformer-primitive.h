@@ -13,5 +13,6 @@ namespace raytracer
         Primitive translate(const math::Vector3D&, Primitive);
 		Primitive scale(double sx, double sy, double sz, Primitive transformee);
 		Primitive rotate_around_x(Angle, Primitive);
+		Primitive rotate_y(const Angle angle, Primitive transformee);
     }
 }

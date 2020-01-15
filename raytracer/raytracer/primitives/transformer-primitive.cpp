@@ -104,3 +104,7 @@ Primitive primitives::rotate_around_x(const Angle a, const Primitive transformee
 {
 	return transform(math::transformations::rotate_around_x(a), transformee);
 }
+
+Primitive primitives::rotate_y(const Angle angle, Primitive transformee) {
+	return transform(math::transformations::rotate_y(angle), transformee);
+}
