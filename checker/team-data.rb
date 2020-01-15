@@ -21,6 +21,9 @@ team_member 'Arthur' do
   extension BasicScripting
   extension RayTracerV1
   extension PlaneYZ
+  extension PlaneYZOptimized
+  extension SquareXZ
+  extension SquareXZOptimized
   extension TriangleOptimized
 end
 
