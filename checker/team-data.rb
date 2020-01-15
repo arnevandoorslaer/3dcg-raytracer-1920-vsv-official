@@ -16,6 +16,7 @@ team_member 'Arthur' do
   extension Triangle
   extension BoundingBox
   extension DirectionalLight
+  extension ConeAlongYOptimized
   # hieronder diff 1 (5)
   extension BasicSample
   extension BasicScripting
@@ -25,6 +26,7 @@ team_member 'Arthur' do
   extension SquareXZ
   extension SquareXZOptimized
   extension TriangleOptimized
+  extension PrimitiveRotationZ
 end
 
 team_member 'Arne' do
