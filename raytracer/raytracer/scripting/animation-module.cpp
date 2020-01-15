@@ -4,23 +4,27 @@
 #include "scripting/scripting-util.h"
 #include "raytracers/scene.h"
 #include "animation/animations.h"
+#include "math/functions/easing-functions.h"
 #include "math/angle.h"
+#include "math/function.h"
 #include "math/functions.h"
-
 
 using namespace chaiscript;
 using namespace raytracer;
 using namespace math;
 using namespace imaging;
 using namespace animation;
+using namespace math::functions::easing;
 
 
 namespace
 {
+
+
     struct AnimationLibrary
     {
         Animation<Point3D> point_animation(const Point3D& from, const Point3D& to, Duration duration) const
-        {
+		{
             return animation::animate(from, to, duration);
         }
 
@@ -33,6 +37,13 @@ namespace
         {
             return animation::animate(from, to, duration);
         }
+
+		template<typename T>
+		inline Animation<T> ease_animation(Animation<T>& a, const functions::EasingFunction& f) const
+		{
+			return animation::ease(a, f);
+		}
+
     };
 
     Duration seconds(double s)
@@ -41,7 +52,7 @@ namespace
     }
 
     Animation<std::shared_ptr<Scene>> make_scene_animation(std::function<std::shared_ptr<Scene>(TimeStamp)> function, Duration duration)
-    {
+	{
         return Animation<std::shared_ptr<Scene>>(from_lambda(function), duration);
     }
 }
@@ -61,6 +72,9 @@ ModulePtr raytracer::scripting::_private_::create_animation_module()
     BIND_AS(double_animation, animate);
 	BIND_AS(point_animation, animate);
 	BIND_AS(angle_animation, animate);
+	BIND_AS(ease_animation<double>, ease);
+	BIND_AS(ease_animation<Point3D>, ease);
+	BIND_AS(ease_animation<Angle>, ease);
 #undef BIND
 #undef BIND_AS
 
@@ -69,7 +83,7 @@ ModulePtr raytracer::scripting::_private_::create_animation_module()
     module->add(fun([](Duration d, TimeStamp t) { return t + d; }), "+");
     module->add(fun(&Animation<Point3D>::operator()), "[]");
     module->add(fun(&Animation<Angle>::operator()), "[]");
-    module->add(fun(&Animation<double>::operator()), "[]");
+	module->add(fun(&Animation<double>::operator()), "[]");
     module->add(fun(&make_scene_animation), "scene_animation");
 
     return module;

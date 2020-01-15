@@ -21,9 +21,6 @@ team_member 'Arthur' do
   extension BasicScripting
   extension RayTracerV1
   extension PlaneYZ
-  extension PlaneYZOptimized
-  extension SquareXZ
-  extension SquareXZOptimized
   extension TriangleOptimized
 end
 
@@ -58,6 +55,7 @@ team_member 'Stijn' do
   # hieronder diff 3 (3)
   extension ConeAlongZ
   # hieronder diff 2 (4)
+  extension ConeAlongZOptimized
   extension MaterialCheckered2D
   extension MaterialGrid2d
   extension MaterialVerticalLines

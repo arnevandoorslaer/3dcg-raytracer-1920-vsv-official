@@ -173,6 +173,29 @@ namespace
     {
         module.add(fun(&create_rectangle3d), "rect3d");
     }
+
+	struct EasingLibrary
+	{
+		EasingFunction linear() const
+		{
+			return math::functions::easing::linear();
+		}
+
+		EasingFunction bounce(int a, int b) const
+		{
+			return math::functions::easing::bounce(a, b);
+		}
+	};
+
+	void add_easing(Module& module)
+	{
+		auto easing_library = std::make_shared<EasingLibrary>();
+		module.add_global_const(const_var(easing_library), "Easing");
+#   define BIND(NAME)  module.add(fun(&EasingLibrary::NAME), #NAME)
+		BIND(linear );
+		BIND(bounce);
+#   undef BIND
+	}
 }
 
 ModulePtr raytracer::scripting::_private_::create_math_module()
@@ -183,6 +206,7 @@ ModulePtr raytracer::scripting::_private_::create_math_module()
     add_rectangle3d(*module);
     add_angle(*module);
     add_interval(*module);
+	add_easing(*module);
 
     return module;
 }

@@ -1,0 +1,18 @@
+#include "math/functions/easing/bounce-easing-function.h"
+#include "math/interval.h"
+#include <assert.h>
+# define M_PI           3.14159265358979323846  /* pi */
+
+using namespace math;
+using namespace math::functions;
+
+EasingFunction math::functions::easing::bounce(int b, int a) {
+	
+	std::function<double(double)> lambda = [a,b](double t) {
+		assert(interval(0.0, 1.0).contains(t));
+
+		return 1 - abs(exp(-(1/a)*t) * (cos(b*t + 1)));
+	};
+
+	return from_lambda(lambda);
+}
