@@ -49,7 +49,7 @@ team_member 'Arne' do
   extension PlaneXZOptimized
   extension SquareXYOptimized
   extension PrimitiveRotationX
-
+  extension RayTracerV1
 end
 
 team_member 'Stijn' do
@@ -70,6 +70,7 @@ team_member 'Stijn' do
   extension PlaneXZ
   extension SquareXY
   extension PrimitiveRotationY
+  extension RayTracerV1
 end
 
 # Possible extensions
