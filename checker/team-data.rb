@@ -9,6 +9,7 @@ team_member 'Arthur' do
   extension RayTracerV5
   extension SpotLight
   extension ConeAlongY
+  extension Elastic
   # hieronder diff 2 (4)
   extension RayTracerV2
   extension RayTracerV3
@@ -59,6 +60,7 @@ team_member 'Stijn' do
   extension Difference
   # hieronder diff 3 (3)
   extension ConeAlongZ
+  extension Bounce
   # hieronder diff 2 (4)
   extension ConeAlongZOptimized
   extension MaterialCheckered2D
