@@ -141,7 +141,7 @@ namespace
 
 		Box bounding_box() const override
 		{
-			return Box(interval(-0.01, 0.01), interval(-0.01, 0.01), interval(-1.0, 1.0));
+			return Box(interval(-0.01, 0.01), interval(-1.0, 1.0), interval(-1.0, 1.0));
 		}
 
 	protected:
@@ -151,7 +151,7 @@ namespace
 			hit->position = ray.at(hit->t);
 			hit->local_position.xyz = hit->position;
 			hit->local_position.uv = Point2D(hit->position.y(), hit->position.z());
-			hit->normal = ray.origin.z() > 0 ? m_normal : -m_normal;
+			hit->normal = ray.origin.x() > 0 ? m_normal : -m_normal;
 		}
 	};
 }
