@@ -51,6 +51,8 @@ team_member 'Arne' do
   extension SquareXYOptimized
   extension PrimitiveRotationX
   extension RayTracerV1
+  extension PlaneXY
+  extension SquareYZ
 end
 
 team_member 'Stijn' do
@@ -111,9 +113,6 @@ end
 # extension ConeAlongXOptimized
 # extension ConeAlongYOptimized
 # extension ConeAlongZOptimized
-# extension SquareXY
-# extension SquareXZ
-# extension SquareYZ
 # extension SquareXYOptimized
 # extension SquareXZOptimized
 # extension SquareYZOptimized
