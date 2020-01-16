@@ -22,10 +22,14 @@ team_member 'Arthur' do
   extension BasicSample
   extension BasicScripting
   extension RayTracerV1
+  
   extension TriangleOptimized
+  
   extension PrimitiveRotationZ
+  
   extension PlaneYZ
   extension PlaneYZOptimized
+  
   extension SquareXZ
   extension SquareXZOptimized
 end
@@ -44,15 +48,18 @@ team_member 'Arne' do
   extension StratifiedSampler
   extension JitteredSampler
   extension HalfJitteredSampler
+  extension ConeAlongXOptimized
   # hieronder diff 1 (5)
   extension BasicSample
   extension BasicScripting
-  extension PlaneXZOptimized
-  extension SquareXYOptimized
-  extension PrimitiveRotationX
   extension RayTracerV1
-  extension PlaneXY
+
+  extension PrimitiveRotationX
+  
+  extension PlaneXZOptimized
+  
   extension SquareYZ
+  extension SquareYZOptimized
 end
 
 team_member 'Stijn' do
@@ -68,14 +75,19 @@ team_member 'Stijn' do
   extension MaterialCheckered2D
   extension MaterialGrid2d
   extension MaterialVerticalLines
+  extension EasingLibrary
   # hieronder diff 1 (5)
-  extension PrimitiveScaling
   extension BasicSample
   extension BasicScripting
-  extension PlaneXZ
-  extension SquareXY
-  extension PrimitiveRotationY
   extension RayTracerV1
+  
+  extension PrimitiveScaling
+  extension PrimitiveRotationY
+
+  extension PlaneXZ
+
+  extension SquareXY
+  extension SquareXYOptimized
 end
 
 # Possible extensions
@@ -108,14 +120,6 @@ end
 # extension MaterialTranslate3D
 # extension MaterialRotate2D
 # extension MaterialRotate3D
-# extension ConeAlongY
-# extension ConeAlongZ
-# extension ConeAlongXOptimized
-# extension ConeAlongYOptimized
-# extension ConeAlongZOptimized
-# extension SquareXYOptimized
-# extension SquareXZOptimized
-# extension SquareYZOptimized
 # extension Cube
 # extension CylinderAlongX
 # extension CylinderAlongY
@@ -123,25 +127,18 @@ end
 # extension CylinderAlongXOptimized
 # extension CylinderAlongYOptimized
 # extension CylinderAlongZOptimized
-# extension BoundingBox
 # extension Cropper
 # extension CropperOptimized
 # extension Bumpifier
 # extension IntersectionOptimized
 # extension Difference
 # extension DifferenceOptimized
-# extension PrimitiveScaling
-# extension PrimitiveRotationY
-# extension PrimitiveRotationZ
 # extension Group
 # extension Edge
 # extension Cartoon
 # extension MotionBlur
 # extension Bmp
 # extension Ppm
-# extension EasingLibrary
-# extension Bounce
-# extension Elastic
 # extension Quadratic
 # extension Cubic
 # extension Quintic
@@ -152,4 +149,3 @@ end
 # extension Lissajous
 # extension Cyclic
 # extension Slicer
-# extension Mesh
