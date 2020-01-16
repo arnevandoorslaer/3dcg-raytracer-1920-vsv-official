@@ -38,27 +38,29 @@ end
 team_member 'Arne' do
   # hieronder diff 5 (1)
   extension Mesh
+
   # hieronder diff 4 (1)
   extension Intersection
+
   # hieronder diff 3 (3)
   extension NRooksSampler
   extension MultijitteredSampler
   extension ConeAlongX
+
   # hieronder diff 2 (4)
   extension RandomSampler
   extension StratifiedSampler
   extension JitteredSampler
   extension HalfJitteredSampler
+  extension AngleAnimation
   extension ConeAlongXOptimized
+
   # hieronder diff 1 (5)
   extension BasicSample
   extension BasicScripting
   extension RayTracerV1
-
   extension PrimitiveRotationX
-  
   extension PlaneXZOptimized
-  
   extension SquareYZ
   extension SquareYZOptimized
 end
@@ -66,27 +68,30 @@ end
 team_member 'Stijn' do
   # hieronder diff 5 (1)
   extension Mesh
+
   # hieronder diff 4 (1)
   extension Difference
+
   # hieronder diff 3 (3)
   extension ConeAlongZ
   extension Bounce
+  extension Quadratic
+
   # hieronder diff 2 (4)
   extension ConeAlongZOptimized
   extension MaterialCheckered2D
   extension MaterialGrid2d
   extension MaterialVerticalLines
+  extension PointAnimation
   extension EasingLibrary
+
   # hieronder diff 1 (5)
   extension BasicSample
   extension BasicScripting
   extension RayTracerV1
-  
   extension PrimitiveScaling
   extension PrimitiveRotationY
-
   extension PlaneXZ
-
   extension SquareXY
   extension SquareXYOptimized
 end
