@@ -200,6 +200,11 @@ namespace
 		{
 			return math::functions::easing::quadratic_inout();
 		}
+
+		EasingFunction elastic(int a, int b) const
+		{
+			return math::functions::easing::elastic(a, b);
+		}
 	};
 
 	void add_easing(Module& module)
@@ -207,11 +212,12 @@ namespace
 		auto easing_library = std::make_shared<EasingLibrary>();
 		module.add_global_const(const_var(easing_library), "Easing");
 #   define BIND(NAME)  module.add(fun(&EasingLibrary::NAME), #NAME)
-		BIND(linear );
+		BIND(linear);
 		BIND(bounce);
 		BIND(quadratic_in);
 		BIND(quadratic_out);
 		BIND(quadratic_inout);
+		BIND(elastic);
 #   undef BIND
 	}
 }
