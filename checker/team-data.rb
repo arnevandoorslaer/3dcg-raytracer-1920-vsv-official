@@ -40,6 +40,7 @@ team_member 'Arne' do
   extension StratifiedSampler
   extension JitteredSampler
   extension HalfJitteredSampler
+  extension AngleAnimation
   # hieronder diff 1 (5)
   extension BasicSample
   extension BasicScripting
@@ -56,11 +57,14 @@ team_member 'Stijn' do
   extension Difference
   # hieronder diff 3 (3)
   extension ConeAlongZ
+  extension Bounce
+  extension Quadratic
   # hieronder diff 2 (4)
   extension ConeAlongZOptimized
   extension MaterialCheckered2D
   extension MaterialGrid2d
   extension MaterialVerticalLines
+  extension PointAnimation
   # hieronder diff 1 (5)
   extension PrimitiveScaling
   extension BasicSample

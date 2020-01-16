@@ -11,7 +11,10 @@ EasingFunction math::functions::easing::bounce(int b, int a) {
 	std::function<double(double)> lambda = [a,b](double t) {
 		assert(interval(0.0, 1.0).contains(t));
 
-		return 1 - abs(exp(-(1/a)*t) * (cos(b*t + 1)));
+		//deze is ook nice maar nie echt een bounce
+		//mss nice voor elastic	
+		//return 1 - abs(exp(-(a)*t) * (cos(b*t + 1)));
+		return 1 - pow(2, -a * t) * abs(cos(t * M_PI * b));
 	};
 
 	return from_lambda(lambda);
