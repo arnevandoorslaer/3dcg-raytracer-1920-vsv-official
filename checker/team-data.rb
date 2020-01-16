@@ -10,6 +10,7 @@ team_member 'Arthur' do
   extension SpotLight
   extension ConeAlongY
   extension Elastic
+  extension Cubic
   # hieronder diff 2 (4)
   extension RayTracerV2
   extension RayTracerV3
@@ -140,7 +141,6 @@ end
 # extension Bmp
 # extension Ppm
 # extension Quadratic
-# extension Cubic
 # extension Quintic
 # extension PointAnimation
 # extension AngleAnimation

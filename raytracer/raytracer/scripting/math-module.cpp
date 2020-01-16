@@ -189,6 +189,18 @@ namespace
 		{
 			return math::functions::easing::elastic(a, b);
 		}
+		EasingFunction cubic_in() const
+		{
+			return math::functions::easing::cubic_in();
+		}
+		EasingFunction cubic_out() const
+		{
+			return math::functions::easing::cubic_out();
+		}
+		EasingFunction cubic_inout() const
+		{
+			return math::functions::easing::cubic_inout();
+		}
 	};
 
 	void add_easing(Module& module)
@@ -199,6 +211,9 @@ namespace
 		BIND(linear );
 		BIND(bounce);
 		BIND(elastic);
+		BIND(cubic_in);
+		BIND(cubic_out);
+		BIND(cubic_inout);
 #   undef BIND
 	}
 }
