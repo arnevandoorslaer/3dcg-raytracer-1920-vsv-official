@@ -12,16 +12,17 @@ Function<bool(const Point2D&)> math::functions::checkered2d()
 		auto y = p.y();
 		auto factor = 1;
 
-		if (x < 0) {
-			factor = -factor;
-			x = -x;
-		}
-		if (y < 0) {
-			factor = -factor;
-			y = -y;
-		}
+
 		if (y < 0 && x < 0) {
 			x = -x;
+			y = -y;
+		}
+		else if (x < 0) {
+			factor = -factor;
+			x = -x;
+		}
+		else if (y < 0) {
+			factor = -factor;
 			y = -y;
 		}
 
