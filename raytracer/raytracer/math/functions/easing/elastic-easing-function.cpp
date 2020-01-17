@@ -10,14 +10,7 @@ EasingFunction math::functions::easing::elastic(int b, int a) {
 
 	std::function<double(double)> lambda = [a, b](double t) {
 		assert(interval(0.0, 1.0).contains(t));
-		if (a == 0)
-		{
-			return 1 - exp(-(1 / 0.00000001) * t) * (cos(b * t + 1));
-		}
-		else
-		{
-			return 1 - exp(-(1 / a) * t) * (cos(b * t + 1));
-		}
+		return -exp(-(a)* t) * cos(b * M_PI * t) + 1;
 	};
 
 	return from_lambda(lambda);

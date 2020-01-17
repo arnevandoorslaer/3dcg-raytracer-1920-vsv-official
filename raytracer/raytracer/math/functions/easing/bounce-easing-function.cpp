@@ -13,13 +13,9 @@ EasingFunction math::functions::easing::bounce(int b, int a) {
 
 		//deze is ook nice maar nie echt een bounce
 		//mss nice voor elastic	
-		//return 1 - abs(exp(-(a)*t) * (cos(b*t + 1)));
-		if (a == 0) {
-			return 1 - pow(2, -1 / 0.0000000001 * t) * abs(cos(t * M_PI * b));
-		}
-		else {
-			return 1 - pow(2, -1 / a * t) * abs(cos(t * M_PI * b));
-		}
+		//return 1 - pow(2, -1 / a*3 * t) * abs(cos(t * 2*M_PI * b));
+		return -exp(-(a) * t) * abs(cos(b * M_PI * t)) + 1;
+		
 		
 	};
 
