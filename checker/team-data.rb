@@ -10,6 +10,7 @@ team_member 'Arthur' do
   extension SpotLight
   extension ConeAlongY
   extension Elastic
+  extension Cubic
   # hieronder diff 2 (4)
   extension RayTracerV2
   extension RayTracerV3
@@ -22,14 +23,14 @@ team_member 'Arthur' do
   extension BasicSample
   extension BasicScripting
   extension RayTracerV1
-  
+
   extension TriangleOptimized
-  
+
   extension PrimitiveRotationZ
-  
+
   extension PlaneYZ
   extension PlaneYZOptimized
-  
+
   extension SquareXZ
   extension SquareXZOptimized
 end
@@ -45,6 +46,7 @@ team_member 'Arne' do
   extension NRooksSampler
   extension MultijitteredSampler
   extension ConeAlongX
+  extension Quintic
 
   # hieronder diff 2 (4)
   extension RandomSampler
@@ -145,8 +147,6 @@ end
 # extension Bmp
 # extension Ppm
 # extension Quadratic
-# extension Cubic
-# extension Quintic
 # extension PointAnimation
 # extension AngleAnimation
 # extension Quaternions

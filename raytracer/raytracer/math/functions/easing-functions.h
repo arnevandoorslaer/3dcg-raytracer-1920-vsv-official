@@ -5,3 +5,5 @@
 #include "math/functions/easing/bounce-easing-function.h"
 #include "math/functions/easing/quadratic-easing-function.h"
 #include "math/functions/easing/elastic-easing-function.h"
+#include "math/functions/easing/cubic-function.h"
+#include "math/functions/easing/quintic-easing-function.h"
